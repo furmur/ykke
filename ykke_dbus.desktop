@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=ykke_dbus
+Exec=ykke_dbus %u
+Type=Application
+Terminal=false
+MimeType=x-scheme-handler/ykke;

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+ip=${1:7}
+
+cmd="ssh root@$ip"
+
+session_id=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession)
+terminal_id=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId ${session_id})
+
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal ${terminal_id} "$cmd"
